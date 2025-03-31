@@ -28,7 +28,7 @@ int main()
         std::cout << '\r' << minutes << " : " << secondes << std::flush;
         std::this_thread::sleep_for(std::chrono::seconds(1));
         secondes++;
-        if (secondes == 4)
+        if (secondes == 60)
         {
             secondes = 0;
             minutes++;
