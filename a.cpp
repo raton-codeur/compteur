@@ -11,7 +11,7 @@ int main()
         std::cout << '\r' << minutes << " : " << secondes << std::flush;
         sleep(1);
 		secondes++;
-		if (secondes == 5)
+		if (secondes == 60)
 		{
 			secondes = 0;
 			minutes++;
