@@ -1,3 +1,3 @@
 test :
-	c++ *.cpp
+	c++ a.cpp
 	./a.out
