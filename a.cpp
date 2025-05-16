@@ -33,7 +33,7 @@ int main()
 
     while (true)
     {
-        if (minutes > 50)
+        if (minutes < 50)
         {
             std::cout << '\r' << minutes << " : " << seconds << std::flush;
         }
