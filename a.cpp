@@ -1,8 +1,8 @@
 #include <iostream>
+#include <unistd.h>
 #include <thread>
-#include <atomic>
-#include <condition_variable>
 #include <chrono>
+
 #define A "\033[31m"
 #define B "\033[32m"
 #define C "\033[33m"
@@ -11,17 +11,13 @@
 #define F "\033[36m"
 #define RESET "\033[0m"
 
-std::atomic<bool> reset_requested(false);
+#define MAX_MINUTES 50
 
 void watch_for_enter()
 {
     std::string input;
-    while (true)
-    {
-        std::getline(std::cin, input);
-        reset_requested = true;
-        std::cout << std::endl;
-    }
+	std::getline(std::cin, input);
+	execlp("make", "", 0);
 }
 
 int main()
@@ -31,34 +27,25 @@ int main()
 
     std::thread input_thread(watch_for_enter);
 
-    while (true)
+    while (minutes < MAX_MINUTES)
     {
-        if (minutes < 50)
-        {
-            std::cout << '\r' << minutes << " : " << seconds << std::flush;
-        }
-        else
-        {
-            std::cout << std::endl << A << "PRESS ENTER ";
-            std::cout << B << "PRESS ENTER ";
-            std::cout << C << "PRESS ENTER ";
-            std::cout << D << "PRESS ENTER ";
-            std::cout << E << "PRESS ENTER ";
-            std::cout << F << "PRESS ENTER " << RESET;
-        }
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-        seconds++;
-        if (seconds == 60)
-        {
-            seconds = 0;
-            minutes++;
-        }
-        if (reset_requested)
-        {
-            seconds = 0;
-            minutes = 0;
-            reset_requested = false;
-        }
-    }
+		std::cout << '\r' << minutes << " : " << seconds << " " << std::flush;
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+		seconds++;
+		if (seconds == 60)
+		{
+			seconds = 0;
+			minutes++;
+		}
+	}
+	while (true)
+	{
+		std::cout << A << "PRESS ENTER ";
+		std::cout << B << "PRESS ENTER ";
+		std::cout << C << "PRESS ENTER ";
+		std::cout << D << "PRESS ENTER ";
+		std::cout << E << "PRESS ENTER ";
+		std::cout << F << "PRESS ENTER " << RESET;
+	}
     return 0;
 }
