@@ -17,7 +17,7 @@ void watch_for_enter()
 {
     std::string input;
 	std::getline(std::cin, input);
-	execlp("make", "", 0);
+	execlp("make", "make", "--no-print-directory", nullptr);
 }
 
 int main()

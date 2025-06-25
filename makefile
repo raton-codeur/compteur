@@ -1,7 +1,7 @@
 test :
 	@ c++ a.cpp
 	@ reset
-	@./a.out
+	@ ./a.out
 
 clean :
 	rm a.out
