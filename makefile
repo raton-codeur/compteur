@@ -1,3 +1,4 @@
 test :
 	c++ a.cpp
-	./a.out
+	reset
+	@./a.out
