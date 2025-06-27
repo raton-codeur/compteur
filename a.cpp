@@ -11,7 +11,7 @@
 #define F "\033[36m"
 #define RESET "\033[0m"
 
-#define MAX_MINUTES 50
+#define MAX_MINUTES 60
 
 void watch_for_enter()
 {
