@@ -42,3 +42,5 @@ while True:
 	minutes = 0
 	seconds = 0
 	print("\033[2J\033[H", end="")
+	print(f"chronomètre jusqu'à {MAX_MINUTES:02d} minutes")
+
