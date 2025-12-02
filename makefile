@@ -6,7 +6,7 @@ down :
 	@ reset && python3 down.py $h $m $s
 
 up :
-	@ reset && python3 new_up.py $m
+	@ reset && python3 up.py $m
 
 test :
 	@ reset && python3 test.py
