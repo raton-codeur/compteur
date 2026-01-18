@@ -1,0 +1,102 @@
+vocab
+	path
+		partie de l’URL après le domaine
+
+		on le récupère avec location.pathname
+
+		exemple
+			https://monsite.com/up
+				le path c'est "/up"
+
+	route
+		association entre un path et son rendu
+
+objet routes
+	dictionnaire
+		clé
+			path
+		valeur
+			fonction
+			qui renvoie du html
+			potentiellement dépendant d· paramètres
+
+data-...
+	attribut HTML personnalisé
+
+	utile pour JavaScript
+
+changement de page
+
+	on peut cibler les liens de la SPA
+	avec data-link dans la balise a
+		exemple :
+		<a href="/up" data-link>compteur up</a>
+
+	savoir si on a cliqué sur un lien SPA
+		- surveiller les clics avec un objet e
+		- e.target
+			l’élément en lui même
+
+			si on clic sur un lien, c'est l'élément "a" ou un élément dedans, genre "span"
+		- e.target.closest("[data-link]")
+			element.closest("sélecteur")
+				élément le plus proche (lui même ou ses parents) qui correspond à ce sélecteur
+
+				null si aucune correspondance
+
+	e.preventDefault()
+		e : event de clic sur lien de SPA
+			vérifié avant avec e.target.closest("[data-link]")
+
+		empêcher le comportement normal des liens
+		= garder la même page chargée
+
+		normalement
+			le navigateur demande au serveur de (re)charger la (nouvelle) page
+
+	modifier l'url et l'historique
+	sans recharger
+	avec history.pushState(state, title, url);
+		state
+			optionnel
+
+			souvent : {}
+		title
+			historiquement
+			prévu pour le titre
+
+			en pratique,
+			presque ignoré par les navigateurs
+
+			on met : ""
+		url
+			nouvel url
+
+			souvent un path
+				exemple
+					"/up"
+
+		ça ne change pas le protocole / domaine / port
+			pour vraiment changer
+			il faudrait faire window.location.href = "https://google.com";
+
+			ça peut juste changer le path
+			/ query string
+			/ ancre = hash
+
+	rendre la bonne page quand l'utilisateur utilise les boutons retour et suivant
+	ou quand on fait history.back() et history.forward()
+
+		listen "popstate"
+		et render(location.pathname)
+
+	modifier le rendu des liens selon le path
+		class "pressed" selon le path et les cliques sur les boutons
+
+		a.classList.toggle("pressed", a.getAttribute("href") === path)
+			explication
+				si a.getAttribute("href") === path)
+					on ajoute l'élément à la classe "pressed"
+				sinon
+					on le retire
+

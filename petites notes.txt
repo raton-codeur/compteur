@@ -1,0 +1,31 @@
+hash routes
+	exemple
+		<a href="#/up" data-link>up</a>
+
+npx serve -s .
+	npx
+	c'est un outil fourni avec
+	npm
+		le gestionnaire de paquets de Node
+	pour exécuter un paquet sans l’installer globalement
+
+	serve
+		petit serveur HTTP statique
+
+	-s
+		SPA mode
+
+		si la route demandée n’est pas un fichier, il renvoie index.html
+
+shell
+	$!
+		pid du dernier job lancé en arrière-plan
+
+	kill -0 PID
+		renvoie 0 si le process existe et si tu as le droit de lui envoyer un signal
+
+JavaScript
+	const a = d[k] ?? "blabla";
+		a = d[k]
+		et si d[k] est null ou undefined
+			a = "blabla"
