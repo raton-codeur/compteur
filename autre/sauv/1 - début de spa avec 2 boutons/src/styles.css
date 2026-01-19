@@ -1,0 +1,21 @@
+.top {
+  display: flex;
+}
+
+.top a {
+  flex: 1;
+  padding: 30px 0;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  color: black;
+  border: 1px solid #E6E6E6;
+}
+
+.top a:not(.pressed) {
+  background: #f2f2f2;
+}
+
+.top a:hover, .top a.pressed {
+  background: #E6E6E6;
+}
