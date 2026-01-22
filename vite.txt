@@ -1,0 +1,24 @@
+npm create vite@latest
+	nom au projet
+
+	vanilla
+
+	JavaScript
+npm install
+
+npm run dev
+
+npm run build
+	générer les fichiers finaux
+
+npm run preview
+	tester localement la version build
+
+variables d'environnement
+	fichier .env
+		VAR=blabla
+
+	dans le code
+		import.meta.env.VAR
+
+	seules les variables préfixées VITE_ sont exposées au code côté client
