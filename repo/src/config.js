@@ -4,4 +4,4 @@ export const routes = {
   "/": ""
 };
 
-export const app = document.getElementById("app");
+export const content = document.getElementById("content");

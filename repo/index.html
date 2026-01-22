@@ -11,7 +11,18 @@
     <a href="/up" data-link>up</a>
     <a href="/down" data-link>down</a>
   </div>
-  <div id="app"></div>
+
+  <div class="config">
+    <span>config</span>
+    <div>
+      <span><select id="hours"></select> heures</span>
+      <span><select id="minutes"></select> minutes</span>
+      <span><select id="seconds"></select> secondes</span>
+    </div>
+    <button id="reset-config">reset</button>
+  </div>
+
+  <div id="content"></div>
   <script type="module" src="src/main.js"></script>
 </body>
 </html>

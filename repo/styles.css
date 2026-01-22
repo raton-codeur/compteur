@@ -4,10 +4,10 @@
 
 .top a {
   flex: 1;
-  padding: 30px 0;
+  padding: 2rem 0;
   text-align: center;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 2rem;
   color: black;
   border: 1px solid #E6E6E6;
 }
@@ -16,6 +16,54 @@
   background: #f2f2f2;
 }
 
-.top a:hover, .top a.pressed {
+.top a.pressed {
   background: #E6E6E6;
+}
+
+.top a:hover {
+  background: #bfdbfe;
+}
+
+.config {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
+select {
+  text-align: center;
+  text-align-last: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.config select {
+  font-size: 1.5rem;
+}
+
+select:hover {
+  background: #bfdbfe;
+}
+
+.config div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+button:hover {
+  background-color: #bfdbfe;
 }
