@@ -1,12 +1,8 @@
-npm create vite@latest
-	nom au projet
-
-	vanilla
-
-	JavaScript
-npm install
-
-npm run dev
+sans passer par npm init
+	npm create vite@latest
+		- nom du projet
+		- vanilla
+		- JavaScript
 
 npm run build
 	générer les fichiers finaux
