@@ -1,5 +1,16 @@
 import { render } from "./utils.js";
 
+export function fillSelect(selectId, max) {
+  const select = document.getElementById(selectId);
+
+  for (let i = 0; i <= max; i++) {
+    const option = document.createElement("option");
+    option.value = i;
+    option.textContent = i.toString();
+    select.appendChild(option);
+  }
+}
+
 export function initEvents() {
 
 	document.addEventListener("click", (e) => {
@@ -22,4 +33,9 @@ export function initEvents() {
 	window.addEventListener("popstate", () => {
 		render(location.pathname);
 	});
+
+	document.getElementById("reset-config").addEventListener("click", () => {
+		
+	});
 }
+

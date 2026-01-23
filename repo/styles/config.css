@@ -1,0 +1,23 @@
+.config {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  width: 100%;
+  padding: 1rem;
+	gap: 1rem;
+	font-size: 2rem;
+}
+
+.config input {
+  display: block;
+	font-size: 2rem;
+  text-align: center;
+  height: 3rem;
+  line-height: 3rem;
+}
+
+@media (max-width: 480px) {
+  .config {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,13 @@
+#chrono {
+  font-size: 4rem;
+  text-align: center;
+  padding: 1rem;
+  background: #f2f2f2;
+}
+
+.chrono-controls {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}

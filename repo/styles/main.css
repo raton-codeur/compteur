@@ -1,0 +1,12 @@
+@import "top.css";
+@import "buttons.css";
+@import "chrono.css";
+@import "config.css";
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	margin: 0;
+}

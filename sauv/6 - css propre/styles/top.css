@@ -1,0 +1,32 @@
+.top {
+  display: flex;
+  width: 100%;
+}
+
+.top a {
+  flex: 1;
+  padding: 2rem 0;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
+  border: 1px solid #bfbfbf;
+}
+
+.top a:not(.pressed) {
+  background: #f2f2f2;
+}
+
+.top a.pressed {
+  background: #bfbfbf;
+}
+
+.top a:hover {
+  background: #bfdbfe;
+}
+
+@media (hover: none) {
+  .top a, .top a:hover {
+    background-color: #f2f2f2;
+  };
+}
