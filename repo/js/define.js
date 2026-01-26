@@ -4,5 +4,6 @@ export const DOM = {
 	chrono: document.getElementById('chrono'),
 	startButton: document.getElementById('start'),
 	stopButton: document.getElementById('stop'),
-	resetButton: document.getElementById('reset')
+	resetButton: document.getElementById('reset'),
+	configAndChronoSections: document.querySelectorAll('.config, #chrono, .chrono-controls')
 };

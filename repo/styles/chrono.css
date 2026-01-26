@@ -1,6 +1,8 @@
 #chrono {
-  font-size: 4rem;
   text-align: center;
+  font-size: 4rem;
+  letter-spacing: 0.1em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   padding: 1rem;
   background: #f2f2f2;
 }
@@ -10,4 +12,11 @@
   justify-content: center;
   gap: 2rem;
   margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+  #chrono {
+    font-size: 3rem;
+    letter-spacing: normal;
+  }
 }

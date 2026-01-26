@@ -1,4 +1,7 @@
-test : node_modules
+test :
+	open http://localhost:5173
+
+all : node_modules
 	npm run dev
 
 node_modules : package-lock.json
@@ -7,4 +10,4 @@ node_modules : package-lock.json
 fclean :
 	rm -rf node_modules/
 
-.PHONY : test fclean
+.PHONY : all fclean test
